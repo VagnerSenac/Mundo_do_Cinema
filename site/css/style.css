@@ -1,0 +1,987 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face{
+    font-family: "Jurassic Park";
+    src: url("../fonte/Jurassic_Park.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face{
+    font-family: "Terminator";
+    src: url("../fonte/TERMINAT.TTF") format("truetype");
+    font-display: swap;
+}
+
+@font-face{
+    font-family: "Avengero";
+    src: url("../fonte/avengero.ttf") format("truetype");
+    font-display: swap;
+}
+
+.logo{
+    width: 350px;
+}
+
+.categoria{
+    padding-top: 420px;
+    display:flex;
+    align-items: center;
+    justify-content:space-between;  /* distribui espaços de forma igual */
+}
+
+.menu-principal ul{
+    list-style: none; /* remove a marcação */
+
+}
+.menu-principal ul li{
+    display: inline-block; /* colocar todos os li na mesma linha  */
+}
+
+.menu-principal ul li a{
+    background-color: rgb(245, 245, 245);
+    color: rgb(43, 16, 161);  /*   Cor do texto do menu */
+    text-decoration: none;  /* tira linha do link */
+    text-transform: uppercase;  /* deixa todo texto em Maiúsculo*/
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    font-size: 20px;
+    border-radius: 30px;
+  
+}
+.menu-principal ul li a:hover{   /*   transição quando para o mouse sobre o texto */
+    background-color: rgb(226, 64, 64);
+    color: rgb(5, 5, 5);
+    transition: 0.60s ease; /* pausa de exibição */
+}
+
+#pagina-home{
+    height:  600px;
+    background: linear-gradient(rgba(168, 167, 167, 0.39), rgba(167, 164, 164, 0.226) ), url(../img/banner.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#corpo{
+   display: flow-root;
+   min-height: 700px;
+    text-align: center;
+    background: linear-gradient(135deg, #d6d6d6 0%, #858585 48%, #252525 100%);
+}
+
+.titulo-vingadores{
+    margin-top: 32px;
+    color: #000;
+    font-family: "Avengero", Impact, sans-serif;
+    font-size: 56px;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.35);
+    text-transform: uppercase;
+}
+
+.centro{
+    padding: 1px 24px 48px;
+}
+
+.player-avengers{
+    width: min(100%, 1100px);
+    aspect-ratio: 16 / 9;
+    margin: 24px auto 0;
+    overflow: hidden;
+    border: 1px solid rgba(16, 25, 45, 0.3);
+    border-radius: 14px;
+    background: #10131d;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.3);
+}
+
+.player-avengers iframe{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.cronologia-avengers{
+    position: relative;
+    overflow: hidden;
+    padding: 72px max(24px, calc((100% - 1180px) / 2));
+    background:
+        radial-gradient(ellipse at 50% 0, rgba(42, 91, 178, 0.28), transparent 55%),
+        linear-gradient(145deg, #090d18, #10182b 52%, #080b14);
+    color: #f3f6ff;
+    text-align: left;
+}
+
+.cronologia-avengers::before{
+    position: absolute;
+    top: 0;
+    right: 8%;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(84, 157, 255, 0.18), transparent);
+    content: "";
+    pointer-events: none;
+}
+
+.cabecalho-cronologia-avengers{
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.etiqueta-cronologia-avengers{
+    margin-bottom: 12px;
+    color: #77c9ff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.cabecalho-cronologia-avengers h2{
+    margin-bottom: 14px;
+    color: #fff;
+    font-family: "Avengero", Impact, sans-serif;
+    font-size: clamp(36px, 6vw, 58px);
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-shadow: 0 0 24px rgba(82, 176, 255, 0.42);
+}
+
+.cabecalho-cronologia-avengers > p:last-child{
+    color: #c1cce0;
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.trilha-cronologia-avengers{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.trilha-cronologia-avengers::before{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(transparent, rgba(119, 201, 255, 0.34), transparent);
+    content: "";
+    pointer-events: none;
+}
+
+.card-avengers{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border: 1px solid rgba(137, 176, 239, 0.22);
+    border-radius: 16px;
+    background: linear-gradient(145deg, rgba(25, 35, 57, 0.96), rgba(13, 19, 34, 0.98));
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.27);
+    animation: entrada-avengers 0.7s both;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-avengers:nth-child(2){ animation-delay: 0.1s; }
+.card-avengers:nth-child(3){ animation-delay: 0.2s; }
+.card-avengers:nth-child(4){ animation-delay: 0.3s; }
+
+.card-avengers:hover{
+    transform: translateY(-6px);
+    border-color: rgba(119, 201, 255, 0.72);
+    box-shadow: 0 18px 42px rgba(25, 112, 220, 0.18);
+}
+
+.capa-avengers{
+    position: relative;
+    display: flex;
+    min-height: 300px;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    isolation: isolate;
+    background:
+        radial-gradient(ellipse at 50% 60%, var(--brilho-capa) 0%, transparent 52%),
+        linear-gradient(145deg, var(--fundo-capa-1), var(--fundo-capa-2));
+}
+
+.capa-avengers::before,
+.capa-avengers::after{
+    position: absolute;
+    z-index: -1;
+    border: 1px solid var(--linha-capa);
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+}
+
+.capa-avengers::before{
+    top: 16%;
+    left: 50%;
+    width: 230px;
+    height: 230px;
+    transform: translateX(-50%);
+    box-shadow: 0 0 42px var(--brilho-capa), inset 0 0 36px var(--brilho-capa);
+}
+
+.capa-avengers::after{
+    top: 23%;
+    left: 50%;
+    width: 178px;
+    height: 178px;
+    border-style: dashed;
+    transform: translateX(-50%);
+}
+
+.card-avengers-1 .capa-avengers{
+    --fundo-capa-1: #401b27;
+    --fundo-capa-2: #10182c;
+    --brilho-capa: rgba(241, 72, 81, 0.34);
+    --linha-capa: rgba(255, 146, 127, 0.56);
+}
+
+.card-avengers-2 .capa-avengers{
+    --fundo-capa-1: #402417;
+    --fundo-capa-2: #17172a;
+    --brilho-capa: rgba(255, 156, 59, 0.3);
+    --linha-capa: rgba(255, 202, 112, 0.56);
+}
+
+.card-avengers-3 .capa-avengers{
+    --fundo-capa-1: #29204b;
+    --fundo-capa-2: #11172c;
+    --brilho-capa: rgba(157, 101, 255, 0.34);
+    --linha-capa: rgba(196, 159, 255, 0.58);
+}
+
+.card-avengers-4 .capa-avengers{
+    --fundo-capa-1: #153645;
+    --fundo-capa-2: #15192d;
+    --brilho-capa: rgba(65, 195, 220, 0.3);
+    --linha-capa: rgba(134, 232, 247, 0.56);
+}
+
+.selo-capa-avengers{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #f4f6ff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.selo-capa-avengers span{
+    padding: 5px 9px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+    background: rgba(5, 9, 18, 0.3);
+}
+
+.glifo-capa-avengers{
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    color: rgba(255, 255, 255, 0.88);
+    font-family: "Avengero", Impact, sans-serif;
+    font-size: 106px;
+    line-height: 1;
+    opacity: 0.8;
+    text-shadow: 0 0 35px var(--brilho-capa);
+    transform: translate(-50%, -50%);
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.card-avengers:hover .glifo-capa-avengers{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.12);
+}
+
+.texto-capa-avengers{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.9);
+}
+
+.texto-capa-avengers > span{
+    color: #d7e8ff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.texto-capa-avengers h3{
+    margin-top: 8px;
+    color: #fff;
+    font-family: "Avengero", Impact, sans-serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.detalhes-avengers{
+    padding: 22px;
+}
+
+.ano-cronologia-avengers{
+    color: #77c9ff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.detalhes-avengers h3{
+    margin: 8px 0 10px;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+}
+
+.detalhes-avengers p{
+    min-height: 76px;
+    color: #c1cce0;
+    line-height: 1.6;
+}
+
+.link-trailer-avengers{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    padding: 10px 15px;
+    border: 1px solid rgba(119, 201, 255, 0.45);
+    border-radius: 999px;
+    color: #bce7ff;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.link-trailer-avengers:hover,
+.link-trailer-avengers:focus-visible{
+    border-color: #77c9ff;
+    background: rgba(70, 165, 230, 0.18);
+    color: #fff;
+}
+
+.fonte-cronologia-avengers{
+    margin-top: 24px;
+    color: #9daac0;
+    font-size: 13px;
+    text-align: right;
+}
+
+.fonte-cronologia-avengers a{
+    color: #bce7ff;
+}
+
+@keyframes entrada-avengers{
+    from{ opacity: 0; transform: translateY(18px); }
+    to{ opacity: 1; transform: translateY(0); }
+}
+
+.titulo-jurassic{
+    display: inline-block;
+    margin-top: 36px;
+    color: #b5121b;
+    font-family: "Jurassic Park", Georgia, serif;
+    font-size: clamp(38px, 6vw, 64px);
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    text-shadow: 2px 3px 0 rgba(56, 35, 21, 0.55);
+    text-transform: uppercase;
+}
+
+.galeria-jurassic{
+    max-width: 1200px;
+    margin: 34px auto 0;
+    padding: 0 24px 48px;
+}
+
+.galeria-jurassic h2{
+    margin-bottom: 24px;
+    color: #29251b;
+    font-family: "Jurassic Park", Georgia, serif;
+    font-size: clamp(30px, 4vw, 42px);
+    letter-spacing: 1px;
+}
+
+.logos-jurassic{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.logos-jurassic figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid rgba(41, 37, 27, 0.18);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.logos-jurassic img{
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.logos-jurassic figcaption{
+    margin-top: 12px;
+    color: #29251b;
+    font-weight: 700;
+}
+
+.trailer-jurassic{
+    padding: 64px max(24px, calc((100% - 1200px) / 2));
+    background:
+        radial-gradient(ellipse at 50% 0, rgba(164, 119, 40, 0.2), transparent 55%),
+        linear-gradient(145deg, #171b18, #252821 55%, #111411);
+    color: #f4f0e5;
+    text-align: left;
+}
+
+.cabecalho-trailers-jurassic{
+    max-width: 700px;
+    margin: 0 auto 44px;
+    text-align: center;
+}
+
+.chamada-trailers-jurassic{
+    margin-bottom: 10px;
+    color: #e0bd66;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.cabecalho-trailers-jurassic h2{
+    margin-bottom: 12px;
+    color: #f4d479;
+    font-family: "Jurassic Park", Georgia, serif;
+    font-size: clamp(42px, 7vw, 68px);
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-shadow: 0 3px 18px rgba(224, 189, 102, 0.22);
+}
+
+.cabecalho-trailers-jurassic > p:last-child{
+    color: #d3d0c7;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.linha-do-tempo-jurassic{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.card-trailer-jurassic{
+    position: relative;
+    overflow: hidden;
+    padding: 22px;
+    border: 1px solid rgba(224, 189, 102, 0.24);
+    border-radius: 14px;
+    background: linear-gradient(145deg, rgba(48, 52, 43, 0.96), rgba(29, 33, 29, 0.98));
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-trailer-jurassic:last-child:nth-child(odd){
+    grid-column: 1 / -1;
+    width: calc(50% - 12px);
+    justify-self: center;
+}
+
+.card-trailer-jurassic:hover{
+    transform: translateY(-4px);
+    border-color: rgba(224, 189, 102, 0.72);
+}
+
+.info-trailer-jurassic{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.numero-trailer-jurassic{
+    color: #e0bd66;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.ano-trailer-jurassic{
+    padding: 5px 10px;
+    border: 1px solid rgba(224, 189, 102, 0.42);
+    border-radius: 999px;
+    color: #f4d479;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.card-trailer-jurassic h3{
+    margin-bottom: 8px;
+    color: #fffaf0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(20px, 2.4vw, 26px);
+}
+
+.card-trailer-jurassic > p{
+    min-height: 48px;
+    margin-bottom: 18px;
+    color: #c8c8bf;
+    line-height: 1.5;
+}
+
+.player-trailer-jurassic{
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 9px;
+    background: #080a08;
+}
+
+.player-trailer-jurassic iframe{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.apresentacao{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 24px;
+    color: #fff;
+}
+
+.chamada{
+    margin-bottom: 12px;
+    color: #f0c674;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.apresentacao > h1{
+    font-size: clamp(32px, 5vw, 52px);
+}
+
+.texto-apresentacao{
+    max-width: 700px;
+    margin: 16px auto 36px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.links-filmes{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    text-align: left;
+}
+
+.cartao-filme{
+    display: flex;
+    min-height: 320px;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    background: rgba(20, 20, 20, 0.55);
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.cartao-filme img{
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.cartao-filme .imagem-vingadores{
+    object-position: center top;
+}
+
+.filme-info{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+}
+
+.cartao-filme:hover,
+.cartao-filme:focus-visible{
+    transform: translateY(-4px);
+    background: rgba(20, 20, 20, 0.8);
+}
+
+.cartao-filme h2{
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.cartao-filme p{
+    line-height: 1.5;
+}
+
+.cartao-filme span{
+    margin-top: auto;
+    padding-top: 20px;
+    color: #f0c674;
+    font-weight: 700;
+}
+
+.pagina-sda{
+    height: auto;
+    min-height: 700px;
+    background: linear-gradient(135deg, #eee9dc 0%, #d2c8ae 48%, #8d887a 100%);
+    color: #29291f;
+    text-align: left;
+}
+
+.conteudo-sda{
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 56px 24px;
+}
+
+.sinopse-sda{
+    display: grid;
+    grid-template-columns: minmax(240px, 0.9fr) 1.1fr;
+    align-items: center;
+    gap: 36px;
+    margin-bottom: 56px;
+}
+
+.sinopse-sda > img{
+    width: 100%;
+    min-height: 260px;
+    max-height: 350px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+.chamada-sda{
+    margin-bottom: 10px;
+    color: #6b5b2e;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.sinopse-sda h1{
+    margin-bottom: 18px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(32px, 5vw, 52px);
+}
+
+.sinopse-sda div > p:last-child{
+    font-size: 18px;
+    line-height: 1.75;
+}
+
+.historia-sda h2,
+.curiosidades-sda h2{
+    margin-bottom: 24px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    text-align: center;
+}
+
+.cards-historia-sda{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.card-historia-sda{
+    overflow: hidden;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 5px 16px rgba(34, 30, 20, 0.12);
+}
+
+.card-historia-sda img{
+    display: block;
+    width: 100%;
+    height: 360px;
+    background: #1b1b1b;
+    object-fit: contain;
+}
+
+.card-historia-sda div{
+    padding: 20px;
+}
+
+.card-historia-sda h3{
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.card-historia-sda p,
+.cards-curiosidades-sda p{
+    line-height: 1.6;
+}
+
+.curiosidades-sda{
+    margin-top: 56px;
+}
+
+.cards-curiosidades-sda{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.cards-curiosidades-sda article{
+    padding: 22px;
+    border-top: 4px solid #82713f;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.cards-curiosidades-sda strong{
+    display: block;
+    margin-bottom: 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+}
+
+.credito-imagens-sda{
+    margin-top: 28px;
+    color: #494638;
+    font-size: 14px;
+    text-align: right;
+}
+
+.credito-imagens-sda a{
+    color: inherit;
+}
+
+.pagina-exterminador{
+    height: auto;
+    min-height: 700px;
+    padding: 1px 0;
+    background:
+        radial-gradient(ellipse at 50% 0, rgba(119, 45, 28, 0.3), transparent 50%),
+        linear-gradient(140deg, #191b1d, #343638 52%, #17191b);
+    color: #f3f0e9;
+}
+
+.galeria-exterminador{
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 52px 24px 64px;
+}
+
+.chamada-exterminador{
+    color: #ee7653;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.galeria-exterminador > h1{
+    margin: 10px 0;
+    color: #f2eee7;
+    font-family: "Terminator", Impact, sans-serif;
+    font-size: clamp(36px, 6vw, 58px);
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.descricao-exterminador{
+    max-width: 640px;
+    margin: 0 auto 38px;
+    color: #c9c7c1;
+    font-size: 17px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.capas-exterminador{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.card-exterminador{
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(238, 118, 83, 0.25);
+    border-radius: 12px;
+    background: linear-gradient(145deg, #292b2d, #202224);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-exterminador:hover{
+    transform: translateY(-5px);
+    border-color: rgba(238, 118, 83, 0.75);
+}
+
+.card-exterminador > img{
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    background: #101112;
+    object-fit: contain;
+}
+
+.ano-exterminador{
+    position: absolute;
+    z-index: 1;
+    top: 14px;
+    left: 14px;
+    padding: 6px 11px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    background: rgba(16, 17, 18, 0.82);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.card-exterminador > div{
+    padding: 20px;
+}
+
+.numero-exterminador{
+    display: block;
+    margin-bottom: 8px;
+    color: #ee7653;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.card-exterminador h2{
+    margin-bottom: 10px;
+    color: #f4f0e8;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+}
+
+.card-exterminador p{
+    color: #c9c7c1;
+    line-height: 1.55;
+}
+
+@media (max-width: 800px){
+    .logos-jurassic{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .linha-do-tempo-jurassic{
+        grid-template-columns: 1fr;
+    }
+
+    .trilha-cronologia-avengers{
+        grid-template-columns: 1fr;
+    }
+
+    .trilha-cronologia-avengers::before{
+        left: 12px;
+    }
+
+    .card-trailer-jurassic:last-child:nth-child(odd){
+        grid-column: auto;
+        width: auto;
+    }
+
+    .sinopse-sda{
+        grid-template-columns: 1fr;
+    }
+
+    .cards-historia-sda{
+        grid-template-columns: 1fr;
+    }
+
+    .cards-curiosidades-sda{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .capas-exterminador{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px){
+    .logos-jurassic{
+        grid-template-columns: 1fr;
+    }
+
+    .trailer-jurassic{
+        padding: 44px 18px;
+    }
+
+    .cronologia-avengers{
+        padding: 48px 18px;
+    }
+
+    .capa-avengers{
+        min-height: 260px;
+    }
+
+    .card-trailer-jurassic{
+        padding: 16px;
+    }
+
+    .conteudo-sda{
+        padding: 36px 18px;
+    }
+
+    .cards-curiosidades-sda{
+        grid-template-columns: 1fr;
+    }
+
+    .capas-exterminador{
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-exterminador{
+        padding: 40px 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .card-avengers,
+    .card-avengers:nth-child(2),
+    .card-avengers:nth-child(3),
+    .card-avengers:nth-child(4){
+        animation: none;
+    }
+
+    .card-avengers,
+    .glifo-capa-avengers,
+    .link-trailer-avengers{
+        transition: none;
+    }
+}
