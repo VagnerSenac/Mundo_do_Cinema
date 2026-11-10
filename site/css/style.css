@@ -22,11 +22,18 @@
 }
 
 .logo{
-    width: 350px;
+    
+    width: 200px;
+    background-color: rgba(17, 8, 8, 0.527);
+    padding: 10px;
+    border-radius: 10px;
 }
-
+.menu{
+    padding-top: 100px;
+}
 .categoria{
-    padding-top: 420px;
+    padding-top: 320px;
+    padding-left: 50px;
     display:flex;
     align-items: center;
     justify-content:space-between;  /* distribui espaços de forma igual */
@@ -49,17 +56,21 @@
     border: 1px solid transparent;
     font-size: 20px;
     border-radius: 30px;
-  
+     letter-spacing: 3px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.35);
+   
 }
+  
+
 .menu-principal ul li a:hover{   /*   transição quando para o mouse sobre o texto */
-    background-color: rgb(226, 64, 64);
-    color: rgb(5, 5, 5);
+    background-color: rgba(100, 5, 5, 0.507);
+    color: rgb(209, 204, 204);
     transition: 0.60s ease; /* pausa de exibição */
 }
 
 #pagina-home{
     height:  600px;
-    background: linear-gradient(rgba(168, 167, 167, 0.39), rgba(167, 164, 164, 0.226) ), url(../img/banner.jpg);
+    background: url(../img/banner.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -68,7 +79,7 @@
    display: flow-root;
    min-height: 700px;
     text-align: center;
-    background: linear-gradient(135deg, #d6d6d6 0%, #858585 48%, #252525 100%);
+    background: linear-gradient(135deg, #29352c 0%, #629e5d 48%, #252525 100%);
 }
 
 .titulo-vingadores{
@@ -96,11 +107,11 @@
     box-shadow: 0 18px 48px rgba(0, 0, 0, 0.3);
 }
 
-.player-avengers iframe{
+.player-avengers video{
     display: block;
     width: 100%;
     height: 100%;
-    border: 0;
+    object-fit: cover;
 }
 
 .cronologia-avengers{
@@ -594,6 +605,66 @@
     line-height: 1.6;
 }
 
+#corpo.corpo-home{
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #080b16;
+}
+
+.corpo-home::before,
+.corpo-home::after{
+    position: absolute;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+}
+
+.corpo-home::before{
+    z-index: -1;
+    inset: -20%;
+    background:
+        radial-gradient(ellipse at 18% 28%, rgba(37, 91, 190, 0.62), transparent 34%),
+        radial-gradient(ellipse at 78% 34%, rgba(130, 41, 154, 0.5), transparent 34%),
+        radial-gradient(ellipse at 55% 78%, rgba(20, 130, 135, 0.42), transparent 38%);
+    filter: blur(28px);
+    animation: aurora-home 18s ease-in-out infinite alternate;
+}
+
+.corpo-home::after{
+    z-index: -1;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(7, 10, 20, 0.05), rgba(7, 10, 20, 0.55));
+    background-size: 48px 48px, 48px 48px, 100% 100%;
+    animation: grade-home 8s linear infinite;
+}
+
+.corpo-home > .apresentacao{
+    position: relative;
+}
+
+@keyframes aurora-home{
+    from{
+        transform: translate3d(-2%, -1%, 0) scale(1);
+    }
+
+    to{
+        transform: translate3d(2%, 1%, 0) scale(1.08);
+    }
+}
+
+@keyframes grade-home{
+    from{
+        background-position: 0 0, 0 0, 0 0;
+    }
+
+    to{
+        background-position: 48px 48px, -48px 0, 0 0;
+    }
+}
+
 .links-filmes{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -972,6 +1043,14 @@
 }
 
 @media (prefers-reduced-motion: reduce){
+    .corpo-home::before{
+        animation: none;
+    }
+
+    .corpo-home::after{
+        animation: none;
+    }
+
     .card-avengers,
     .card-avengers:nth-child(2),
     .card-avengers:nth-child(3),
